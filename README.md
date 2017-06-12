@@ -25,7 +25,7 @@ You can execute the command below to create a new container using this new image
 
 Or You you can also execute the same command above, but arranging using docker-compose:
 ```
-@todo fill here
+ docker-compose up -d
 ```
 ## Monitoring Server status
 ```
