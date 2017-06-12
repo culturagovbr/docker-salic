@@ -1,0 +1,18 @@
+version: '2'
+services:
+  web:
+    build: .
+    image: culturagovbr/salic-web:1.1
+    container_name: salic-webv1.1
+    ports:
+     - "80:80"
+     - "9000:9000"
+     - "8888:8888"
+    volumes:
+     - (application_location_path):/var/www
+     - (application_log_location_path)/log/apache2:/var/log/apache2
+     - (application_location_path):/var/www
+     - (public_location_path)/txt:/var/www/public/txt
+     - (public_location_path)/plenaria:/var/www/public/plenaria
+    environment:
+     - APPLICATION_ENV="development"
