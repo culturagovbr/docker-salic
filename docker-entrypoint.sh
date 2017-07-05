@@ -30,7 +30,11 @@ if ! [ -d "/var/www/salic" ] || ! [ -d "/var/www/salic/application" ]; then
 
     echo "[ ****************** ] Installing composer "
     php composer-setup.php
+
+    echo "[ ****************** ] Unlinking and moving composer to '/usr/local/bin/' directory"
     php -r "unlink('composer-setup.php');"
+    mv composer.phar /usr/local/bin/composer
+
 fi
 echo "[ ****************** ] Ending Endpoint of Application"
 exec "$@"
