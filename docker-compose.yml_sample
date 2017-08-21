@@ -21,7 +21,7 @@ services:
      #- XDEBUG_REMOTE_CONNECT_BACK=off
      #- XDEBUG_REMOTE_HANDLER=dbgp
      #- XDEBUG_PROFILER_ENABLE=1
-     #- XDEBUG_PROFILER_OUTPUT_DIR=/var/www/salic
+     #- XDEBUG_PROFILER_OUTPUT_DIR=/tmp/www/html
      #- XDEBUG_REMOTE_PORT=9000
      #- XDEBUGINI_PATH=/usr/local/etc/php/conf.d/xdebug.ini
      #- PHP_IDE_CONFIG="serverName=Test"
