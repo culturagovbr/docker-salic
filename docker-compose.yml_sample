@@ -8,10 +8,10 @@ services:
      - "80:80"
      - "8888:8888"
     volumes:
-     - /var/www/salic:/var/www/salic
-     - /var/www/log/apache2/salic:/var/log/apache2
-     - /var/www/salic/public/txt:/var/www/salic/public/txt/
-     - /var/www/salic/public/plenaria:/var/www/salic/public/plenaria/
+     - ./app:/var/www/salic
+     - ./log/apache2:/var/log/apache2
+     - ./app/public/txt:/var/www/salic/public/txt/
+     - ./app/public/plenaria:/var/www/salic/public/plenaria/
     environment:
      - APPLICATION_ENV=development
      #xDebug configs for 'development' enviroment
