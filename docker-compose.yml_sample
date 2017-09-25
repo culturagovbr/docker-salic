@@ -3,7 +3,7 @@ services:
   web:
     build: .
     image: culturagovbr/salic-web:1.3
-    container_name: salic-webv1.3
+    container_name: salic-web
     ports:
      - "80:80"
      - "8888:8888"
