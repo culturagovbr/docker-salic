@@ -32,6 +32,3 @@ If you wanna check something inside your container you can access using the comm
 ```
 docker exec -it salic-web bash
 ```
-
-See the authors of this repo:
-* [Authors](./Authors.md).
