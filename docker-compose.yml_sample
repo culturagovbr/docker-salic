@@ -15,7 +15,7 @@ services:
     environment:
      - APPLICATION_ENV=development
      - GIT_REPOSITORY=https://github.com/culturagovbr/salic-minc.git
-     - GIT_BRANCH='develop'
+     - GIT_BRANCH=develop
      #- XDEBUG_INSTALL="true"
      #- XDEBUG_CONFIG="remote_host=localhost"
      #- XDEBUG_REMOTE_ENABLE=on
