@@ -14,7 +14,9 @@ services:
      - ./app/public/plenaria:/var/www/salic/public/plenaria/
     environment:
      - APPLICATION_ENV=development
-     #xDebug configs for 'development' enviroment
+     - GIT_REPOSITORY=https://github.com/culturagovbr/salic-minc.git
+     - GIT_BRANCH='develop'
+     #- XDEBUG_INSTALL="true"
      #- XDEBUG_CONFIG="remote_host=localhost"
      #- XDEBUG_REMOTE_ENABLE=on
      #- XDEBUG_REMOTE_AUTOSTART=on
@@ -25,6 +27,9 @@ services:
      #- XDEBUG_REMOTE_PORT=9000
      #- XDEBUGINI_PATH=/usr/local/etc/php/conf.d/xdebug.ini
      #- PHP_IDE_CONFIG="serverName=Test"
+
+     #- XDEBUG_DEFAULT_ENABLE = 1
+     #- XDEBUG_IDEKEY = "PHPSTORM"
     restart: always
   dependency_manager:
     image: composer:1.5.1

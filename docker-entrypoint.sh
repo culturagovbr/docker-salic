@@ -8,7 +8,7 @@ if ! [ -d "/var/www/salic" ] || ! [ -d "/var/www/salic/application" ]; then
         ( set -x; ls -A; sleep 10 )
     fi
     echo "[ ****************** ] Cloning Project repository to tmp folder"
-    git clone -b 'develop' http://git.cultura.gov.br/sistemas/novo-salic.git /tmp/salic
+    git clone -b "$GIT_BRANCH" $GIT_REPOSITORY /tmp/salic
     ls -la /tmp/salic
 
     echo "[ ****************** ] Copying Project from temporary folder to workdir"
@@ -25,9 +25,7 @@ fi
 
 # X-Debug
 
-echo "$XDEBUG_REMOTE_ENABLE"
-
-if ! [ -v $XDEBUG_REMOTE_ENABLE ] ; then
+if ! [ -v $XDEBUG_INSTALL ] ; then
     echo "[ ****************** ] Starting install of XDebug and dependencies."
 		pecl shell-test xdebug && echo "Package xdebug Installed" || (
 			yes | pecl install xdebug 
