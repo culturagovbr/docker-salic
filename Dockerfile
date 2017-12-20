@@ -1,4 +1,4 @@
-FROM php:5.6.30-apache
+FROM php:7.0-apache
 
 VOLUME ["/var/www"]
 
@@ -22,7 +22,7 @@ RUN docker-php-ext-install gd
 RUN docker-php-ext-install soap
 
 RUN docker-php-ext-install calendar
-RUN docker-php-ext-configure mssql --with-libdir=/lib/x86_64-linux-gnu && docker-php-ext-install mssql
+#RUN docker-php-ext-configure mssql --with-libdir=/lib/x86_64-linux-gnu && docker-php-ext-install mssql
 RUN docker-php-ext-configure pdo_dblib --with-libdir=/lib/x86_64-linux-gnu && docker-php-ext-install pdo_dblib
 
 RUN chmod +x -R /tmp/src/
