@@ -19,8 +19,12 @@ if ! [ -d "/var/www/salic" ] || ! [ -d "/var/www/salic/application" ]; then
 
     echo "[ ****************** ] Changing owner and group from the Project to 'www-data' "
     chown www-data:www-data -R /var/www/salic
+fi
 
-    ls -la /var/www/salic
+if ! [ ! [ -d "/var/www/salic/vendor" ]; then
+    cd /var/www/salic
+    echo [ ****************** ]" Installing composer dependencies."
+    composer install --prefer-source --no-interaction
 fi
 
 # X-Debug
@@ -28,7 +32,7 @@ fi
 if ! [ -v $XDEBUG_INSTALL ] ; then
     echo "[ ****************** ] Starting install of XDebug and dependencies."
 		pecl shell-test xdebug && echo "Package xdebug Installed" || (
-			yes | pecl install xdebug 
+			yes | pecl install xdebug
 			echo "zend_extension="`find /usr/local/lib/php/extensions/ -iname 'xdebug.so'` > $XDEBUGINI_PATH
 		    	echo "xdebug.remote_enable=$XDEBUG_REMOTE_ENABLE" >> $XDEBUGINI_PATH
 
