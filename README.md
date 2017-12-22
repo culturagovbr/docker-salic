@@ -1,36 +1,30 @@
 # docker-salic
 
-Repo used to have a recipe(Dockerfile) to create a image used by SALIC (Sistema de Apoio às Leis de Incentivo à Cultura)
+Repositório utilizado como receita para utilização da plataforma [Docker](http://pt.slideshare.net/vinnyfs89/docker-essa-baleia-vai-te-conquistar?qid=aed7b752-f313-4515-badd-f3bf811c8a35&v=&b=&from_search=1) e arquivo Dockerfile e construir novas imagens para o SALIC (Sistema de Apoio às Leis de Incentivo à Cultura)	.
+   
+## Sobre
+		
+Dentro do Dockerfile, na construção da imagem, para cada módulo PHP que for instalado, o PHP será recompilado.
 
-## Prerequisites
-* Docker - More information [here](http://pt.slideshare.net/vinnyfs89/docker-essa-baleia-vai-te-conquistar?qid=aed7b752-f313-4515-badd-f3bf811c8a35&v=&b=&from_search=1).
+Esse repositório tinha sido descontinuado mas de acordo com uma necessidade de infraestrutura tornou a ser necessário para que seja utilizado apenas para a geração de uma imagem fechada do PHP já contendo o código da aplicação.
+		
+## Construindo uma nova imagem e gerando novos containers		
+		
+ * Copie o arquivo ```docker-compose.yml_sample``` para ```docker-compose.yml``` 		
+ * Defina a localização como você preferir para a propriedade "volumes", mapeando host e container
+ * Execute o comando ``` docker-compose up -d --build	```
+		
+## Monitoramento do status do servidor		
+		
+Para monitoramento do seu container, basta executar o comando abaixo:
+   	
+    docker exec -it salic-br bash -c "cd /tmp && wget 127.0.0.1/server-status -o server-status && cat server-status"		
 
-## Details
+## Extra		
+	
+Caso seja necessário verificar algo dentro do seu container você poderá acessá-lo utilizando o comando abaixo:
 
-For Each extension installed inside DockerFile, PHP will be compiled again.
-
-## How to build new image and create a container
-
- * Copy the file ```docker-compose.yml_sample``` to ```docker-compose.yml``` 
- * Set the locations as you prefer in 'volumes' attribute
- * Run the command below
-
-```
- docker-compose up -d
-```
-
-## Monitoring Server status
-
-To monitor your container, just run the command below:
-```
-docker exec -it salic-web bash -c "cd /tmp && wget 127.0.0.1/server-status -o server-status && cat server-status"
-```
-
-## Extra
-
-If you wanna check something inside your container you can access using the command below:
-```
-docker exec -it salic-web bash
+    docker exec -it salic-web bash		
 ```
 
 ## Desenvolvedores
