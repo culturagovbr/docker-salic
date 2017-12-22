@@ -37,5 +37,5 @@ docker exec -it salic-web bash
 
 O arquivo docker-compose.yml_dev é uma sugestão para desenvolvedores:
 * mem_limit: 1g # limitar espaço do container em memoria da maquina.
-* - XDEBUG_INSTALL="true" # Adiciona as configurações do xdebug
+* XDEBUG_INSTALL="true" # Adiciona as configurações do xdebug
 * networks: # Configuração estatica de ips para container, possibilita incluir o ip no /etc/hosts
