@@ -23,7 +23,7 @@ Para monitoramento do seu container, basta executar o comando abaixo:
 ## Extra		
 	
 Caso seja necessário verificar algo dentro do seu container você poderá acessá-lo utilizando o comando abaixo:
-
+```
     docker exec -it salic-web bash		
 ```
 
