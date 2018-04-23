@@ -1,5 +1,4 @@
 /Dockerfile
 /log
 /app
-docker-compose.yml
 .idea
