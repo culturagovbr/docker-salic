@@ -38,7 +38,7 @@ fi
 
 
 # X-Debug
-if ! [ -v $XDEBUG_INSTALL ] && [ $APPLICATION_ENV == 'development']; then
+if ! [ -v $XDEBUG_INSTALL ] || [ $APPLICATION_ENV == 'development'] ; then
     echo "[ ****************** ] Starting install of XDebug and dependencies."
 	pecl shell-test xdebug && echo "Package xdebug Installed" || (
 		yes | pecl install xdebug 
